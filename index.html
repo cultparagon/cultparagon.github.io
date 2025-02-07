@@ -1,0 +1,102 @@
+v<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            background: url('atardecer.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffd700;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        #yes {
+            background-color: #ff4500;
+            color: white;
+        }
+        #no {
+            background-color: #444;
+            color: white;
+            position: absolute;
+        }
+        #no:hover {
+            cursor: not-allowed;
+        }
+        img {
+            width: 250px;
+            margin-top: 20px;
+        }
+        .question {
+            display: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="question active" id="q1">
+        <h1> what do you think about tommy ✨</h1>
+        <button onclick="nextQuestion('q1', 'q2')">like him</button>
+        <button onclick="moveButton()" id="no">eww</button>
+    </div>
+    <div class="question" id="q2">
+        <h1> do you love him? 💫</h1>
+        <button onclick="nextQuestion('q2', 'q3')">with my whole heart</button>
+        <button onclick="moveButton()">sorry...</button>
+    </div>
+    <div class="question" id="q3">
+        <h1> would you like to be his boyfriend? 💖</h1>
+        <button id="yes" onclick="accept()">yes!!!</button>
+        <button id="no" onmouseover="moveButton()">no sorry</button>
+    </div>
+    <p id="response"></p>
+    <img id="image" src="" style="display: none;">
+
+    <script>
+        function nextQuestion(current, next) {
+            document.getElementById(current).classList.remove("active");
+            document.getElementById(next).classList.add("active");
+        }
+
+        function accept() {
+            document.getElementById("response").innerText = "hey boyfriend 💕";
+            document.getElementById("image").src = "tu-imagen.png"; // Cambia esto con la URL de tu imagen
+            document.getElementById("image").style.display = "block";
+        }
+
+        function moveButton() {
+            let button = document.getElementById("no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
