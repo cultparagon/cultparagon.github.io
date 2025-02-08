@@ -7,77 +7,93 @@
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: url('fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
             text-align: center;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
         .container {
             display: none;
-            margin: 50px auto;
             padding: 20px;
-            background: gray;
-            color: gold;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 10px;
+            margin: 100px auto;
             width: 50%;
+            background-color: gray;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        .buttons {
-            margin-top: 20px;
+        .visible {
+            display: block;
         }
-        button {
-            font-size: 18px;
-            padding: 10px;
+        h1 {
+            color: gold;
+        }
+        .btn {
+            padding: 10px 20px;
             margin: 10px;
-            border-radius: 5px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
             cursor: pointer;
         }
-        .positive {
+        .yes {
             background-color: red;
             color: white;
         }
-        .negative {
+        .no {
             background-color: black;
             color: white;
-        }
-        .negative:hover {
             cursor: not-allowed;
+        }
+        .final-message {
+            display: none;
+            font-size: 24px;
+            color: red;
         }
     </style>
 </head>
 <body>
-    <div id="question1" class="container" style="display: block;">
-        What do you think about Tommy? ✨
-        <div class="buttons">
-            <button class="positive" onclick="nextQuestion(2)">I kind of like him</button>
-            <button class="negative">ewww</button>
-        </div>
+    <div id="q1" class="container visible">
+        <h1>What do you think about Tommy? ✨</h1>
+        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">I kind of like him</button>
+        <button class="btn no" onmouseover="moveButton(this)">ewww</button>
     </div>
-    <div id="question2" class="container">
-        Do you think he's funny? 🌟
-        <div class="buttons">
-            <button class="positive" onclick="nextQuestion(3)">Obviously</button>
-            <button class="negative">He wishes</button>
-        </div>
+    
+    <div id="q2" class="container">
+        <h1>Do you think he's funny? 🛸</h1>
+        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">Obviously</button>
+        <button class="btn no" onmouseover="moveButton(this)">He wishes</button>
     </div>
-    <div id="question3" class="container">
-        How do you feel about Tommy? ❤️
-        <div class="buttons">
-            <button class="positive" onclick="nextQuestion(4)">I love him maybe</button>
-            <button class="negative">A jerk</button>
-        </div>
+    
+    <div id="q3" class="container">
+        <h1>How do you feel about Tommy? ❤️</h1>
+        <button class="btn yes" onclick="nextQuestion('q3', 'q4')">I love him maybe</button>
+        <button class="btn no" onmouseover="moveButton(this)">A jerk</button>
     </div>
-    <div id="question4" class="container">
-        Would you be his boyfriend? ❤️
-        <div class="buttons">
-            <button class="positive">Yes</button>
-            <button class="positive">Yes!!!!!!</button>
-        </div>
+    
+    <div id="q4" class="container">
+        <h1>Would you be his boyfriend? ❤️</h1>
+        <button class="btn yes" onclick="showFinalMessage()">Yes</button>
+        <button class="btn yes" onclick="showFinalMessage()">Yes!!!!!!</button>
     </div>
+    
+    <div id="final-message" class="final-message">
+        Hey boyfriend, happy Valentine's! 💖
+    </div>
+    
     <script>
-        function nextQuestion(num) {
-            document.getElementById("question" + (num - 1)).style.display = "none";
-            document.getElementById("question" + num).style.display = "block";
+        function nextQuestion(current, next) {
+            document.getElementById(current).classList.remove('visible');
+            document.getElementById(next).classList.add('visible');
+        }
+        
+        function moveButton(btn) {
+            btn.style.position = 'absolute';
+            btn.style.top = Math.random() * window.innerHeight + 'px';
+            btn.style.left = Math.random() * window.innerWidth + 'px';
+        }
+        
+        function showFinalMessage() {
+            document.getElementById('q4').classList.remove('visible');
+            document.getElementById('final-message').style.display = 'block';
         }
     </script>
 </body>
