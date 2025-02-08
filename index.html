@@ -6,82 +6,78 @@
     <title>A Special Question</title>
     <style>
         body {
-            background: url('your-sunset-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            color: #ffcc00;
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
             text-align: center;
         }
         .container {
-            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            margin: 50px auto;
             padding: 20px;
-            border-radius: 15px;
-        }
-        .question {
+            background: gray;
+            color: gold;
             font-size: 24px;
-            margin-bottom: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 50%;
         }
         .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
+            margin-top: 20px;
         }
         button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
             font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .yes {
+        .positive {
             background-color: red;
             color: white;
         }
-        .no {
+        .negative {
             background-color: black;
             color: white;
         }
-        .no:hover {
+        .negative:hover {
             cursor: not-allowed;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="question-container" class="question">What do you think about Tommy? ✨</div>
-        <div id="buttons-container" class="buttons">
-            <button class="yes" onclick="nextQuestion(1)">I kind of like him</button>
-            <button class="no" onclick="showEww()">ewww</button>
+    <div id="question1" class="container" style="display: block;">
+        What do you think about Tommy? ✨
+        <div class="buttons">
+            <button class="positive" onclick="nextQuestion(2)">I kind of like him</button>
+            <button class="negative">ewww</button>
         </div>
     </div>
-
+    <div id="question2" class="container">
+        Do you think he's funny? 🌟
+        <div class="buttons">
+            <button class="positive" onclick="nextQuestion(3)">Obviously</button>
+            <button class="negative">He wishes</button>
+        </div>
+    </div>
+    <div id="question3" class="container">
+        How do you feel about Tommy? ❤️
+        <div class="buttons">
+            <button class="positive" onclick="nextQuestion(4)">I love him maybe</button>
+            <button class="negative">A jerk</button>
+        </div>
+    </div>
+    <div id="question4" class="container">
+        Would you be his boyfriend? ❤️
+        <div class="buttons">
+            <button class="positive">Yes</button>
+            <button class="positive">Yes!!!!!!</button>
+        </div>
+    </div>
     <script>
-        const questions = [
-            { text: "Do you think he's funny? ✨", positive: "Obviously", negative: "He wishes" },
-            { text: "How do you feel about Tommy? ❤️", positive: "I love him maybe", negative: "A jerk" },
-            { text: "Would you be his boyfriend? ❤️", positive: "Yes!!!", negative: "Yes" }
-        ];
-        let currentQuestion = 0;
-
-        function nextQuestion(index) {
-            if (index < questions.length) {
-                document.getElementById("question-container").innerHTML = questions[index].text;
-                document.getElementById("buttons-container").innerHTML = `
-                    <button class='yes' onclick='nextQuestion(${index + 1})'>${questions[index].positive}</button>
-                    <button class='no' onclick='showEww()'>${questions[index].negative}</button>
-                `;
-            } else {
-                document.getElementById("question-container").innerHTML = "You said yes! 💖";
-                document.getElementById("buttons-container").innerHTML = "";
-            }
-        }
-
-        function showEww() {
-            alert("ewww");
+        function nextQuestion(num) {
+            document.getElementById("question" + (num - 1)).style.display = "none";
+            document.getElementById("question" + num).style.display = "block";
         }
     </script>
 </body>
