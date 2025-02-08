@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question</title>
+    <title>...</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -35,11 +35,11 @@
             cursor: pointer;
         }
         .yes {
-            background-color: red;
+            background-color: pink;
             color: white;
         }
         .no {
-            background-color: black;
+            background-color: pink;
             color: white;
             cursor: not-allowed;
         }
@@ -52,31 +52,44 @@
 </head>
 <body>
     <div id="q1" class="container visible">
-        <h1>What do you think about Tommy? ✨</h1>
-        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">I kind of like him</button>
-        <button class="btn no" onmouseover="moveButton(this)">ewww</button>
+        <h1> first impression of tommy  </h1>
+        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">when you know you know</button>
+        <button class="btn no" onmouseover="moveButton(this)">normal i guess</button>
     </div>
+    
     
     <div id="q2" class="container">
-        <h1>Do you think he's funny? 🛸</h1>
-        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">Obviously</button>
-        <button class="btn no" onmouseover="moveButton(this)">He wishes</button>
+        <h1>how do you feel about tommy? </h1>
+        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">i love him kind of</button>
+        <button class="btn no" onmouseover="moveButton(this)">absolute jerk</button>
     </div>
-    
-    <div id="q3" class="container">
-        <h1>How do you feel about Tommy? ❤️</h1>
-        <button class="btn yes" onclick="nextQuestion('q3', 'q4')">I love him maybe</button>
-        <button class="btn no" onmouseover="moveButton(this)">A jerk</button>
+
+     <div id="q3" class="container">
+        <h1> is he funny be honest </h1>
+        <button class="btn yes" onclick="nextQuestion('q3', 'q4')">makes my ribs hurt</button>
+        <button class="btn no" onmouseover="moveButton(this)">not really</button>
     </div>
+
+     <div id="q4" class="container">
+        <h1> what if you both were targaryen prince siblings </h1>
+        <button class="btn yes" onclick="nextQuestion('q4', 'q5')">you know what... hell yeah </button>
+        <button class="btn no" onmouseover="moveButton(this)">that is disgusting </button>
+    </div>
+
+     <div id="q5" class="container">
+        <h1> where is your heart without your tommy? </h1>
+        <button class="btn yes" onclick="nextQuestion('q5', 'q6')">lost :(</button>
+        <button class="btn no" onmouseover="moveButton(this)">in my body duh</button>
+    </div>   
     
-    <div id="q4" class="container">
-        <h1>Would you be his boyfriend? ❤️</h1>
-        <button class="btn yes" onclick="showFinalMessage()">Yes</button>
-        <button class="btn yes" onclick="showFinalMessage()">Yes!!!!!!</button>
+    <div id="q6" class="container">
+        <h1>would you be his boyfriend? </h1>
+        <button class="btn yes" onclick="showFinalMessage()">yes</button>
+        <button class="btn yes" onclick="showFinalMessage()">yes!!!!!!</button>
     </div>
     
     <div id="final-message" class="final-message">
-        Hey boyfriend, happy Valentine's! 💖
+        hey boyfriend happy valentines! 💖
     </div>
     
     <script>
