@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question...</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            background: url('sunset.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffd700;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        #yes, #yes2 {
+            background-color: #ff4500;
+            color: white;
+        }
+        .no-button {
+            background-color: #444;
+            color: white;
+            position: absolute;
+        }
+        .no-button:hover {
+            cursor: not-allowed;
+        }
+        img {
+            width: 250px;
+            margin-top: 20px;
+        }
+        .question {
+            display: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="question active" id="q1">
+        <h1>What do you think about Tommy? ✨</h1>
+        <button onclick="nextQuestion('q1', 'q2')">I kind of like him</button>
+        <button class="no-button" onclick="showEww()">ewww</button>
+    </div>
+    <div class="question" id="q2">
+        <h1>Do you think he's funny? 💫</h1>
+        <button onclick="nextQuestion('q2', 'q3')">Obviously</button>
+        <button class="no-button" onclick="showEww()">He wishes</button>
+    </div>
+    <div class="question" id="q3">
+        <h1>How do you feel about Tommy? 💖</h1>
+        <button onclick="nextQuestion('q3', 'q4')">I love him maybe</button>
+        <button class="no-button" onclick="showEww()">A jerk</button>
+    </div>
+    <div class="question" id="q4">
+        <h1>Would you be his boyfriend? ❤️</h1>
+        <button id="yes" onclick="accept()">Yes</button>
+        <button id="yes2" onclick="accept()">Yes!!!!!!</button>
+    </div>
+    <p id="response"></p>
+    <img id="image" src="" style="display: none;">
+
+    <script>
+        function nextQuestion(current, next) {
+            document.getElementById(current).classList.remove("active");
+            document.getElementById(next).classList.add("active");
+        }
+
+        function accept() {
+            document.getElementById("response").innerText = "I knew you’d say yes! 💕";
+            document.getElementById("image").src = "your-image.png"; // Replace with your image URL
+            document.getElementById("image").style.display = "block";
+        }
+
+        function showEww() {
+            alert("eww");
+        }
+    </script>
+</body>
+</html>
+
