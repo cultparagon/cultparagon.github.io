@@ -3,102 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question...</title>
+    <title>A Special Question</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-        
         body {
-            text-align: center;
-            font-family: 'Pacifico', cursive;
-            background: url('sunset.jpg') no-repeat center center fixed;
+            background: url('your-sunset-image.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #ffd700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ffcc00;
+            text-align: center;
         }
-        h1 {
-            font-size: 2.5em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        .buttons {
-            position: relative;
-            margin-top: 20px;
-        }
-        button {
-            font-size: 20px;
-            padding: 15px 25px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-        }
-        #yes, #yes2 {
-            background-color: #ff4500;
-            color: white;
-        }
-        .no-button {
-            background-color: #444;
-            color: white;
-            position: absolute;
-        }
-        .no-button:hover {
-            cursor: not-allowed;
-        }
-        img {
-            width: 250px;
-            margin-top: 20px;
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
         }
         .question {
-            display: none;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 20px;
-            display: inline-block;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        .active {
-            display: block;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: black;
+            color: white;
+        }
+        .no:hover {
+            cursor: not-allowed;
         }
     </style>
 </head>
 <body>
-    <div class="question active" id="q1">
-        <h1>What do you think about Tommy? ✨</h1>
-        <button onclick="nextQuestion('q1', 'q2')">I kind of like him</button>
-        <button class="no-button" onclick="showEww()">ewww</button>
+    <div class="container">
+        <div id="question-container" class="question">What do you think about Tommy? ✨</div>
+        <div id="buttons-container" class="buttons">
+            <button class="yes" onclick="nextQuestion(1)">I kind of like him</button>
+            <button class="no" onclick="showEww()">ewww</button>
+        </div>
     </div>
-    <div class="question" id="q2">
-        <h1>Do you think he's funny? 💫</h1>
-        <button onclick="nextQuestion('q2', 'q3')">Obviously</button>
-        <button class="no-button" onclick="showEww()">He wishes</button>
-    </div>
-    <div class="question" id="q3">
-        <h1>How do you feel about Tommy? 💖</h1>
-        <button onclick="nextQuestion('q3', 'q4')">I love him maybe</button>
-        <button class="no-button" onclick="showEww()">A jerk</button>
-    </div>
-    <div class="question" id="q4">
-        <h1>Would you be his boyfriend? ❤️</h1>
-        <button id="yes" onclick="accept()">Yes</button>
-        <button id="yes2" onclick="accept()">Yes!!!!!!</button>
-    </div>
-    <p id="response"></p>
-    <img id="image" src="" style="display: none;">
 
     <script>
-        function nextQuestion(current, next) {
-            document.getElementById(current).classList.remove("active");
-            document.getElementById(next).classList.add("active");
-        }
+        const questions = [
+            { text: "Do you think he's funny? ✨", positive: "Obviously", negative: "He wishes" },
+            { text: "How do you feel about Tommy? ❤️", positive: "I love him maybe", negative: "A jerk" },
+            { text: "Would you be his boyfriend? ❤️", positive: "Yes!!!", negative: "Yes" }
+        ];
+        let currentQuestion = 0;
 
-        function accept() {
-            document.getElementById("response").innerText = "I knew you’d say yes! 💕";
-            document.getElementById("image").src = "your-image.png"; // Replace with your image URL
-            document.getElementById("image").style.display = "block";
+        function nextQuestion(index) {
+            if (index < questions.length) {
+                document.getElementById("question-container").innerHTML = questions[index].text;
+                document.getElementById("buttons-container").innerHTML = `
+                    <button class='yes' onclick='nextQuestion(${index + 1})'>${questions[index].positive}</button>
+                    <button class='no' onclick='showEww()'>${questions[index].negative}</button>
+                `;
+            } else {
+                document.getElementById("question-container").innerHTML = "You said yes! 💖";
+                document.getElementById("buttons-container").innerHTML = "";
+            }
         }
 
         function showEww() {
-            alert("eww");
+            alert("ewww");
         }
     </script>
 </body>
 </html>
-
