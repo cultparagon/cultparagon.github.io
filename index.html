@@ -43,10 +43,23 @@
             color: white;
             cursor: not-allowed;
         }
-        .final-message {
+         .modal {
             display: none;
-            font-size: 24px;
-            color: red;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: 15% auto;
+            text-align: center;
         }
     </style>
 </head>
@@ -81,15 +94,24 @@
         <button class="btn yes" onclick="nextQuestion('q5', 'q6')">lost :(</button>
         <button class="btn no" onmouseover="moveButton(this)">in my body duh</button>
     </div>   
+
+      <div id="q6" class="container">
+        <h1> you made it this far! i will decide your fate now </h1>
+        <button class="btn yes" onclick="nextQuestion('q5', 'q6')">i'll keep going...</button>
+        <button class="btn no" onmouseover="moveButton(this)">i'm done</button>
+    </div>   
     
-    <div id="q6" class="container">
-        <h1>would you be his boyfriend? </h1>
+    <div id="q7" class="container">
+        <h1>the deal is almost sealed. would you be his boyfriend, then? </h1>
         <button class="btn yes" onclick="showFinalMessage()">yes</button>
         <button class="btn yes" onclick="showFinalMessage()">yes!!!!!!</button>
     </div>
     
-    <div id="final-message" class="final-message">
-        hey boyfriend happy valentines! 💖
+ <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>hey boyfriend happy valentines! ❤️</h2>
+            <button class="button" onclick="closeModal()">Close</button>
+        </div>
     </div>
     
     <script>
@@ -104,10 +126,7 @@
             btn.style.left = Math.random() * window.innerWidth + 'px';
         }
         
-        function showFinalMessage() {
-            document.getElementById('q4').classList.remove('visible');
-            document.getElementById('final-message').style.display = 'block';
-        }
+      
     </script>
 </body>
 </html>
