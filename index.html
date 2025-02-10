@@ -75,7 +75,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         }
-        .visible {
+        .container.visible {
             display: block;
         }
         h1 {
@@ -166,7 +166,7 @@
         <button class="heart-button" onclick="startQuiz()">❤</button>
     </div>
     
-    <div id="q1" class="container visible">
+    <div id="q1" class="container">
         <h1> first impression of tommy  </h1>
         <button class="btn yes" onclick="nextQuestion('q1', 'q2')">when you know you know kinda situation</button>
         <button class="btn no" onmouseover="moveButton(this)">normal i guess</button>
@@ -228,10 +228,15 @@
     
     <script>
         
-     function startQuiz() {
-            document.getElementById('intro').style.display = 'none';
-            document.getElementById('q1').classList.add('visible');
+         function startQuiz() {
+            document.getElementById('intro').style.display = 'none'; // Oculta la intro
+
+            let questions = document.querySelectorAll('.container');
+            questions.forEach(q => q.classList.remove('visible')); // Asegura que todas estén ocultas
+
+            document.getElementById('q1').classList.add('visible'); // Muestra la primera pregunta
         }
+        
         function nextQuestion(current, next) {
             document.getElementById(current).classList.remove('visible');
             document.getElementById(next).classList.add('visible');
