@@ -23,7 +23,6 @@
           .modal-content {
         width: 90%;
         max-width: 350px; /* Tamaño máximo para móviles */
-        margin-top: 30%; /* Deja un pequeño margen superior */
         padding: 15px;
         
     }
@@ -111,14 +110,18 @@
             display: none;
             position: fixed;
             z-index: 1000;
-           left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+           left: 0;
+            top: 0;
+            
             width: 100%;
             height: 100%;
             background-color: rgba(232, 128, 163, 0.6);
             backdrop-filter: blur(5px);
+              display: flex;  /* Usamos flexbox para centrar */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;  /* Centrado vertical */
         }
+        
         .modal-content {
           background-color: white;
         padding: 20px;
@@ -129,8 +132,7 @@
         text-align: center;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); 
         font-family: 'Trebuchet MS', sans-serif;
-        position: absolute;
-         transform: translate(-50%, -50%);
+        
         animation: fadeIn 0.3s ease-in-out; 
           
         }
