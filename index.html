@@ -19,6 +19,14 @@
     }  .container {
                 width: 80%;
             }
+
+          .modal-content {
+        width: 90%;
+        max-width: 350px; /* Tamaño máximo para móviles */
+        margin-top: 10%; /* Deja un pequeño margen superior */
+        margin-bottom: 10%;
+        transform: translateY(0); /* Ajusta el modal para que no quede tan alto */
+    }
         } 
 
 .intro-container {
@@ -103,8 +111,9 @@
             display: none;
             position: fixed;
             z-index: 1000;
-            left: 0;
-            top: 0;
+           left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             width: 100%;
             height: 100%;
             background-color: rgba(232, 128, 163, 0.6);
@@ -122,6 +131,7 @@
         font-family: 'Trebuchet MS', sans-serif;
         position: relative;
         animation: fadeIn 0.3s ease-in-out; 
+        transform: translateY(-50%);    
         }
 
           .modal-gif {
