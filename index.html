@@ -181,52 +181,65 @@
         <img src="https://github.com/cultparagon/cultparagon.github.io/blob/main/love-always-wins.png?raw=true" alt="Start Quiz" class="heart-icon">
     </button>
     </div>
-    
+
     <div id="q1" class="container">
-        <h1> first impression of tommy  </h1>
-        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">when you know you know kinda situation</button>
+        <h1> do you have a date for today?  </h1>
+        <button class="btn no" onmouseover="moveButton(this)">sadly no </button>
+        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">yes!! <3 </button>
+        
+    </div>
+
+    <div id="q2" class="container">
+        <h1> who's the lucky person </h1>
+        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">(my) tommy </button>
+        <button class="btn no" onmouseover="moveButton(this)">some random </button>
+    </div>
+    
+    <div id="q3" class="container">
+        <h1> first impression of tommy...? </h1>
+        <button class="btn yes" onclick="nextQuestion('q3', 'q4')">when you know you know kinda situation</button>
         <button class="btn no" onmouseover="moveButton(this)">normal i guess</button>
     </div>
     
     
-    <div id="q2" class="container">
+    <div id="q4" class="container">
         <h1>how do you feel about tommy? </h1>
-        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">i love him very much <3 </button>
+        <button class="btn yes" onclick="nextQuestion('q4', 'q5')">i love him very much <3 </button>
         <button class="btn no" onmouseover="moveButton(this)">absolute jerk!!</button>
     </div>
 
-     <div id="q3" class="container">
+     <div id="q5" class="container">
         <h1> is he funny be honest </h1>
         <button class="btn no" onmouseover="moveButton(this)">boring asf :/</button>
-         <button class="btn yes" onclick="nextQuestion('q3', 'q4')">makes my ribs hurt</button>
+         <button class="btn yes" onclick="nextQuestion('q5', 'q6')">makes my ribs hurt</button>
     </div>
 
-     <div id="q4" class="container">
+     <div id="q6" class="container">
         <h1> what if you both were targaryen prince siblings </h1>
-        <button class="btn yes" onclick="nextQuestion('q4', 'q5')">you know what... hell yeah </button>
+        <button class="btn yes" onclick="nextQuestion('q6', 'q7')">you know what... hell yeah </button>
         <button class="btn no" onmouseover="moveButton(this)">that is disgusting </button>
     </div>
 
-     <div id="q5" class="container">
+     <div id="q7" class="container">
         <h1> where is your heart without your tommy? </h1>
         <button class="btn no" onmouseover="moveButton(this)">inside my body duh</button>
-         <button class="btn yes" onclick="nextQuestion('q5', 'q6')">lost :(</button>
+         <button class="btn yes" onclick="nextQuestion('q7', 'q8')">lost :(</button>
     </div>   
 
-      <div id="q6" class="container">
+      <div id="q8" class="container">
         <h1> you made it this far! i will decide your fate now </h1>
-        <button class="btn yes" onclick="nextQuestion('q6', 'q7')">i'll keep going...</button>
+        <button class="btn yes" onclick="nextQuestion('q8', 'q9')">i'll keep going...</button>
         <button class="btn no" onmouseover="moveButton(this)">i'm done bye</button>
     </div>   
 
-    <div id="q7" class="container">
+    <div id="q9" class="container">
         <h1> are you 100% sure of this? there is no turning back </h1>
         <button class="btn no" onmouseover="moveButton(this)">i'm out weirdo</button>
-        <button class="btn yes" onclick="nextQuestion('q7', 'q8')">well i'm here aren't i</button>
+        <button class="btn yes" onclick="nextQuestion('q9', 'q10')">well i'm here aren't i</button>
     </div> 
     
-    <div id="q8" class="container">
-        <h1>would you be his boyfriend? </h1>
+    <div id="q10" class="container">
+        <h1>...would you be his boyfriend? </h1>
         <button class="btn yes" onclick="showModal()">of course yes</button>
         <button class="btn yes" onclick="showModal()">yes!!!!!!</button>
 
