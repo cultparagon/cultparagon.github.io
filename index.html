@@ -16,8 +16,10 @@
        @media (max-width: 768px) { 
     body {
         font-size: 12px; 
-    }
-} 
+    }  .container {
+                width: 80%;
+            }
+        } 
 
 .intro-container {
             position: absolute;
@@ -41,24 +43,20 @@
         }
 
         .heart-button {
-            background-color: red;
-            transform: scale(0.8);
-            color: white;
-            padding: 15px;
-            font-size: 20px;
-            border: none;
-            border-radius: 50%;
+           background-color: transparent; /* Sin color de fondo */
+            border: none; /* Sin borde */
+            padding: 10px;
             cursor: pointer;
             transition: 0.3s;
             display: inline-block;
-            position: relative;
-            width: 40px;
-            height: 40px;
-            
         }
 
         .heart-button:hover {
-            background-color: darkred;
+            transform: scale(1.2);
+        }
+        .heart-icon {
+        width: 40px; /* Tamaño del icono */
+        height: auto; /* Mantener la proporción del icono */
         }
 
         .hidden {
@@ -166,7 +164,9 @@
 
    <div id="intro" class="intro-container">
         <h2>try this new valentine's quiz to have the perfect day!</h2>
-        <button class="heart-button" onclick="startQuiz()">❤</button>
+       <button class="heart-button" onclick="startQuiz()">
+        <img src="https://github.com/cultparagon/cultparagon.github.io/blob/main/love-always-wins.png?raw=true" alt="Start Quiz" class="heart-icon">
+    </button>
     </div>
     
     <div id="q1" class="container">
