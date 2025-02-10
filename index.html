@@ -109,21 +109,21 @@
 <body>
     <div id="q1" class="container visible">
         <h1> first impression of tommy  </h1>
-        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">when you know you know...</button>
+        <button class="btn yes" onclick="nextQuestion('q1', 'q2')">when you know you know kinda situation</button>
         <button class="btn no" onmouseover="moveButton(this)">normal i guess</button>
     </div>
     
     
     <div id="q2" class="container">
         <h1>how do you feel about tommy? </h1>
-        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">i love him kind of</button>
-        <button class="btn no" onmouseover="moveButton(this)">absolute jerk</button>
+        <button class="btn yes" onclick="nextQuestion('q2', 'q3')">i love him very much <3 </button>
+        <button class="btn no" onmouseover="moveButton(this)">absolute jerk!!</button>
     </div>
 
      <div id="q3" class="container">
         <h1> is he funny be honest </h1>
         <button class="btn yes" onclick="nextQuestion('q3', 'q4')">makes my ribs hurt</button>
-        <button class="btn no" onmouseover="moveButton(this)">not really</button>
+        <button class="btn no" onmouseover="moveButton(this)">boring asf :/</button>
     </div>
 
      <div id="q4" class="container">
@@ -135,25 +135,33 @@
      <div id="q5" class="container">
         <h1> where is your heart without your tommy? </h1>
         <button class="btn yes" onclick="nextQuestion('q5', 'q6')">lost :(</button>
-        <button class="btn no" onmouseover="moveButton(this)">in my body duh</button>
+        <button class="btn no" onmouseover="moveButton(this)">inside my body duh</button>
     </div>   
 
       <div id="q6" class="container">
         <h1> you made it this far! i will decide your fate now </h1>
         <button class="btn yes" onclick="nextQuestion('q6', 'q7')">i'll keep going...</button>
-        <button class="btn no" onmouseover="moveButton(this)">i'm done</button>
+        <button class="btn no" onmouseover="moveButton(this)">i'm done bye</button>
     </div>   
-    
+
     <div id="q7" class="container">
-        <h1>the deal is almost sealed... would you be his boyfriend? </h1>
-        <button class="btn yes" onclick="showModal()">yes</button>
+        <h1> are you 100% sure of this? there is no turning back </h1>
+        <button class="btn yes" onclick="nextQuestion('q7', 'q8')">well i'm here aren't i</button>
+        <button class="btn no" onmouseover="moveButton(this)">i'm out weirdo</button>
+    </div> 
+    
+    <div id="q8" class="container">
+        <h1>would you be his boyfriend? </h1>
+        <button class="btn yes" onclick="showModal()">of course yes</button>
         <button class="btn yes" onclick="showModal()">yes!!!!!!</button>
 
     </div>
+
+    
     
  <div id="modal" class="modal">
         <div class="modal-content">
-            <h2>hey boyfriend happy valentines! ❤️</h2>
+            <h2>hey boyfriend happy valentines! ❤️ i love you </h2>
             <button class="button" onclick="closeModal()">Close</button>
         </div>
     </div>
