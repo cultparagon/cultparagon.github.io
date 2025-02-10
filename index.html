@@ -19,7 +19,7 @@
     }
 } 
 
-.start-container {
+.intro-container {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -34,7 +34,7 @@
             color: white;
         }
 
-        .start-container h2 {
+        .intro-container h2 {
             font-size: 22px;
             margin-bottom: 20px;
         }
@@ -161,10 +161,10 @@
 </head>
 <body>
 
-   <div id="startScreen" class="start-container">
+   <div id="intro" class="intro-container">
         <h2>try this new valentine's quiz to have the perfect day!</h2>
         <button class="heart-button" onclick="startQuiz()">❤</button>
-    </div> 
+    </div>
     
     <div id="q1" class="container visible">
         <h1> first impression of tommy  </h1>
@@ -227,13 +227,11 @@
     </div>
     
     <script>
-
-    function startQuiz() {
-            document.getElementById('startScreen').style.display = 'none';
-            document.getElementById('q1').classList.remove('hidden');
+        
+     function startQuiz() {
+            document.getElementById('intro').style.display = 'none';
             document.getElementById('q1').classList.add('visible');
         }
-        
         function nextQuestion(current, next) {
             document.getElementById(current).classList.remove('visible');
             document.getElementById(next).classList.add('visible');
