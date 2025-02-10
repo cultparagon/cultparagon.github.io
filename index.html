@@ -18,6 +18,51 @@
         font-size: 12px; 
     }
 } 
+
+.start-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('URL_DE_TU_IMAGEN') no-repeat center center;
+            background-size: cover;
+            padding: 40px;
+            width: 50%;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: white;
+        }
+
+        .start-container h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .heart-button {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .heart-button:hover {
+            background-color: darkred;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
         .container {
            display: none;
         padding: 20px;
@@ -177,7 +222,11 @@
     
     <script>
 
-
+    function startQuiz() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('q1').classList.remove('hidden');
+            document.getElementById('q1').classList.add('visible');
+        }
         
         function nextQuestion(current, next) {
             document.getElementById(current).classList.remove('visible');
